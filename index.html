@@ -1,0 +1,507 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Electricista y plomero a domicilio en Capital Federal y zona norte | MJV Reparaciones Integrales</title>
+<meta name="description" content="MJV Reparaciones Integrales: electricidad, plomería y arreglos del hogar a domicilio en todos los barrios de Capital Federal y en zona norte. La visita se descuenta del trabajo, 15% de descuento programando con 10 días, presupuesto por escrito y 30 días de garantía.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_AR">
+<meta property="og:title" content="MJV Reparaciones Integrales: electricidad, plomería y arreglos del hogar">
+<meta property="og:description" content="A domicilio en Capital Federal y zona norte. La visita se descuenta del trabajo, presupuesto por escrito y 30 días de garantía.">
+<meta property="og:image" content="logo.png">
+<meta name="theme-color" content="#0B3D91">
+<link rel="icon" href="favicon.png" type="image/png">
+<!-- <link rel="canonical" href="https://DOMINIO/"> : falta el dominio; sumar también "url" en el JSON-LD -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{--esmalte:#0B3D91;--blanco:#fff;--asfalto:#23272E;--taxi:#FFCC00;--vereda:#E4E6EA}
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth;overscroll-behavior:none}
+  body{overflow-x:clip;margin:0;background:var(--asfalto);color:var(--blanco);font:18px/1.55 Barlow,system-ui,sans-serif}
+  h1,h2,h3,.cond{font-family:"Barlow Condensed","Arial Narrow",sans-serif;font-weight:700;line-height:1}
+  .ancho{max-width:1040px;margin:0 auto;padding-left:20px;padding-right:20px}
+  section{padding-top:56px;padding-bottom:56px}
+  h2{font-size:clamp(2.2rem,6vw,3.4rem);margin:0 0 24px}
+  a:focus-visible,summary:focus-visible{outline:4px solid var(--taxi);outline-offset:4px}
+  .franja a:focus-visible{outline-color:#000}
+  .clara a:focus-visible,.clara summary:focus-visible{outline-color:var(--esmalte)}
+
+  /* ---------- La chapa: cartel esmaltado atornillado a la pared ---------- */
+  .hero{padding-top:24px;padding-bottom:28px;min-height:100svh;display:flex;flex-direction:column; /* la primera pantalla termina justo en los sellos */
+    background:
+      radial-gradient(85% 95% at 50% 0,rgba(255,255,255,.14),transparent 75%),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='88' height='56'%3E%3Cpath d='M0 1h88M0 29h88M1 0v28M45 28v28' stroke='%2315181d' stroke-width='3' fill='none'/%3E%3Cpath d='M0 3.5h88M0 31.5h88M3.5 2v26M47.5 30v26' stroke='%23fff' stroke-opacity='.05' stroke-width='2' fill='none'/%3E%3C/svg%3E")
+      #2a2f38} /* pared de ladrillo */
+  .hero > .ancho{flex:1;width:100%;max-width:min(1400px,165vh); /* en pantallas altas la chapa también se ensancha, así no queda cuadrada */display:flex;flex-direction:column}
+  .chapa{flex:1;display:flex;flex-direction:column;justify-content:center; /* la chapa ocupa el alto que sobra */
+    --b:clamp(24px,4vw,34px);            /* distancia del filete blanco al borde */
+    --rx:0deg;--ry:0deg;--gx:26%;--gy:-8%; /* inclinación y posición del brillo (las mueve el puntero) */
+    position:relative;isolation:isolate;border-radius:18px;
+    padding:calc(var(--b) + clamp(12px,2.4vw,24px)) calc(var(--b) + clamp(16px,4.5vw,52px));
+    background:
+      radial-gradient(110% 85% at var(--gx) var(--gy),rgba(255,255,255,.34),rgba(255,255,255,.06) 38%,transparent 60%),
+      linear-gradient(180deg,rgba(255,255,255,.10),transparent 28%,transparent 62%,rgba(0,0,0,.28)),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .09 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"),
+      var(--esmalte);
+    box-shadow:
+      inset 0 2px 1px rgba(255,255,255,.5), inset 0 -3px 2px rgba(0,0,0,.5),          /* bisel de arriba y de abajo */
+      inset 2px 0 1px rgba(255,255,255,.14), inset -2px 0 1px rgba(0,0,0,.3),          /* bisel de los costados */
+      0 1px 0 #082f73,0 2px 0 #072a67,0 3px 0 #06245a,0 4px 0 #051e4c,0 5px 0 #04183e,0 6px 0 #031230, /* canto: espesor del metal */
+      0 16px 14px -6px rgba(0,0,0,.6), 0 40px 46px -14px rgba(0,0,0,.65);              /* sombra sobre la pared */
+    transform:perspective(1300px) rotateX(var(--rx)) rotateY(var(--ry));
+    transition:transform .3s ease-out;will-change:transform;
+  }
+  /* filete blanco en relieve */
+  .chapa::before{content:"";position:absolute;inset:var(--b);border:5px solid #f6f8fb;border-radius:9px;pointer-events:none;z-index:-1;
+    box-shadow:0 2px 2px rgba(0,0,0,.4), 0 -1px 0 rgba(255,255,255,.18), inset 0 2px 2px rgba(0,0,0,.35), inset 0 -1px 0 rgba(255,255,255,.12)}
+  /* remaches en los cuatro vértices */
+  .remache{--o:calc((var(--b) - 14px)/2);position:absolute;width:14px;height:14px;border-radius:50%;
+    background:radial-gradient(circle at 36% 30%,#fff 0 9%,#dfe4ec 20%,#98a2b3 55%,#4b5466 100%);
+    box-shadow:0 0 0 2px rgba(2,16,52,.6), 0 0 0 3px rgba(255,255,255,.14), 0 2px 3px 1px rgba(0,0,0,.65), inset 0 -1px 1px rgba(0,0,0,.45)}
+  .remache:nth-of-type(1){top:var(--o);left:var(--o)}
+  .remache:nth-of-type(2){top:var(--o);right:var(--o)}
+  .remache:nth-of-type(3){bottom:var(--o);left:var(--o)}
+  .remache:nth-of-type(4){bottom:var(--o);right:var(--o)}
+  .chapa h1,.chapa .cond{-webkit-text-stroke:3px #000;paint-order:stroke fill;text-shadow:0 3px 0 rgba(0,0,0,.55)} /* filete negro: el trazo va detrás del relleno, se ve la mitad */
+  .chapa h1 b{-webkit-text-stroke-width:5px;text-shadow:0 5px 0 rgba(0,0,0,.55)}
+  h1{margin:0;text-transform:uppercase;letter-spacing:.03em;font-size:clamp(1.9rem,min(6.6vw,9.5vh),6.4rem);text-wrap:balance;text-align:center}
+  .marca{display:flex;align-items:center;justify-content:center;gap:clamp(12px,3vw,48px)}
+  .marca img{height:clamp(5rem,min(19vw,30vh),20rem);width:auto;flex:none}
+  h1 span{display:block}
+  h1 b{display:block;font-size:clamp(4.4rem,min(17vw,27vh),18rem);line-height:.88;letter-spacing:.03em}
+  .chapa .cond{font-size:clamp(1.2rem,min(3.2vw,4.6vh),3rem);font-weight:700;margin:14px 0 0;display:flex;justify-content:center;gap:4px clamp(24px,5vw,72px);flex-wrap:wrap;
+    border-top:4px solid #f6f8fb;padding-top:12px;text-transform:uppercase;letter-spacing:.05em}
+  @media (max-width:700px){ /* celular: menos marco, letras más grandes, sin aire de sobra */
+    .chapa{--b:14px;padding:calc(var(--b) + 18px) calc(var(--b) + 12px);border-radius:14px}
+    .marca{flex-direction:column;gap:6px}
+    .marca img{height:min(30vw,17vh)}
+    h1{font-size:6.4vw} h1 b{font-size:min(34vw,19vh);-webkit-text-stroke-width:4px}
+    .chapa h1 span,.chapa .cond{-webkit-text-stroke-width:2px;text-shadow:0 2px 0 rgba(0,0,0,.55)}
+    .chapa .cond{font-size:4.1vw;white-space:nowrap;flex-direction:column;align-items:center;gap:3px;letter-spacing:.03em;border-top-width:3px;margin-top:10px;padding-top:9px}
+    .bajo{margin-top:24px;gap:16px}
+    .hero p.bajada{font-size:1.1rem}
+    .sellos{margin-top:14px;gap:3px 28px;font-size:.95rem}}
+  @media (prefers-reduced-motion:reduce){.chapa,.precios li,.barrios li{transition:none}html{scroll-behavior:auto}}
+
+  /* ---------- Al cargar, la chapa se arma a la vista: se cuelga, se atornilla, se pinta y se rotula ---------- */
+  @property --gx{syntax:"<percentage>";inherits:false;initial-value:26%}
+  @property --gy{syntax:"<percentage>";inherits:false;initial-value:-8%}
+  @media (prefers-reduced-motion:no-preference){
+    .chapa{animation:colgar .55s cubic-bezier(.3,1.5,.5,1) backwards, brillo .8s 1.45s ease-in-out backwards}
+    .remache{animation:atornillar .35s ease-out backwards}
+    .remache:nth-of-type(1){animation-delay:.45s} .remache:nth-of-type(2){animation-delay:.55s}
+    .remache:nth-of-type(3){animation-delay:.65s} .remache:nth-of-type(4){animation-delay:.75s}
+    .chapa::before{animation:pintar .45s .7s ease-in-out backwards}
+    .marca img{animation:engranar .6s .9s cubic-bezier(.2,1.4,.4,1) backwards}
+    h1 b{animation:estampar .32s 1.1s ease-out backwards}
+    h1 span{animation:subir .35s 1.25s ease-out backwards}
+    .chapa .cond{animation:pintar .4s 1.35s ease-out backwards}
+    .bajo,.sellos{animation:subir .4s 1.5s ease-out backwards}
+  }
+  @keyframes colgar{from{opacity:0;transform:translateY(-70px) rotate(-3deg)}60%{opacity:1;transform:translateY(5px) rotate(.8deg)}to{transform:none}}
+  @keyframes atornillar{from{opacity:0;transform:scale(2.4) rotate(-320deg)}70%{opacity:1;transform:scale(.85)}to{transform:none}}
+  @keyframes pintar{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}
+  @keyframes engranar{from{opacity:0;transform:rotate(-200deg) scale(.3)}to{transform:none}}
+  @keyframes estampar{from{opacity:0;transform:scale(1.9)}60%{opacity:1;transform:scale(.96)}to{transform:none}}
+  @keyframes subir{from{opacity:0;transform:translateY(14px)}to{transform:none}}
+  @keyframes brillo{from{--gx:-40%;--gy:-30%}to{--gx:26%;--gy:-8%}}
+
+  /* ---------- Barra de scroll: una cinta métrica, y la chapita la recorre ---------- */
+  ::-webkit-scrollbar{width:18px}
+  ::-webkit-scrollbar-track{background:
+      linear-gradient(#111 0 2px,transparent 0) 0 0/10px 50px repeat-y, linear-gradient(#111 0 1px,transparent 0) 0 0/5px 10px repeat-y,
+      linear-gradient(#111 0 2px,transparent 0) 100% 0/10px 50px repeat-y, linear-gradient(#111 0 1px,transparent 0) 100% 0/5px 10px repeat-y,
+      var(--taxi);box-shadow:inset 1px 0 0 #9a7b00}
+  ::-webkit-scrollbar-thumb{border:2px solid transparent;border-radius:6px;background:
+      radial-gradient(circle closest-side,#fff 0 15%,#98a2b3 60%,#4b5466 90%,transparent) 50% 8px/7px 7px no-repeat padding-box,
+      radial-gradient(circle closest-side,#fff 0 15%,#98a2b3 60%,#4b5466 90%,transparent) 50% calc(100% - 8px)/7px 7px no-repeat padding-box,
+      linear-gradient(90deg,rgba(255,255,255,.25),transparent 45%,rgba(0,0,0,.25)) padding-box,
+      var(--esmalte) padding-box;
+    box-shadow:inset 0 0 0 3px var(--esmalte),inset 0 0 0 5px #f6f8fb,0 0 0 1px #04183e}
+  ::-webkit-scrollbar-thumb:hover{background-color:#1c5bc0}
+  @supports not selector(::-webkit-scrollbar){html{scrollbar-color:var(--esmalte) var(--taxi)}} /* Firefox: solo colores */
+  /* En el celular no hay barra: la cinta métrica se estira arriba a medida que bajás */
+  @media (hover:none){@supports (animation-timeline:scroll()){
+    body::before{content:"";position:fixed;z-index:9;top:0;left:0;right:0;height:7px;transform-origin:0 50%;
+      background:linear-gradient(90deg,#111 0 2px,transparent 0) 0 0/50px 7px, linear-gradient(90deg,#111 0 1px,transparent 0) 0 0/10px 3px repeat-x, var(--taxi);
+      box-shadow:0 1px 0 #9a7b00;animation:cinta linear both;animation-timeline:scroll(root)}
+    @keyframes cinta{from{transform:scaleX(0)}to{transform:scaleX(1)}}}}
+
+  .bajo{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px 40px;margin-top:34px}
+  .hero p.bajada{font-size:1.3rem;max-width:46ch;margin:0}
+  .wa{display:inline-block;background:var(--taxi);color:#000;font-family:"Barlow Condensed",sans-serif;font-weight:700;font-size:1.6rem;line-height:1.1;text-decoration:none;padding:13px 26px;border-radius:6px;box-shadow:0 4px 0 #9a7b00;transition:transform .12s,box-shadow .12s}
+  .wa:hover{background:var(--blanco);transform:translateY(2px);box-shadow:0 2px 0 #9a7b00}
+  .franja .wa{background:#000;color:var(--taxi);box-shadow:0 4px 0 rgba(0,0,0,.35)}
+  .franja .wa:hover{color:#fff}
+  .sellos{list-style:none;margin:22px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px 28px;font-weight:600}
+  .sellos li::before{content:"✓";color:var(--taxi);margin-right:8px}
+
+  .franja{background:var(--taxi);color:#000}
+  .franja ol{margin:0;padding:0;list-style:none;display:grid;gap:24px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));counter-reset:p}
+  .franja li{counter-increment:p;font-weight:600;display:grid;grid-template-columns:auto 1fr;align-content:start}
+  .franja li .ic{grid-row:1;grid-column:1/-1;width:112px;height:112px;margin-bottom:18px;color:#000}
+  .franja li::before,.franja li > span:not(.ic){grid-row:2;border-top:6px solid #000;padding-top:14px} /* el divisor corre por debajo del ícono, de punta a punta */
+  .franja li::before{content:counter(p) ".";grid-column:1;padding-right:12px;font-family:"Barlow Condensed",sans-serif;font-weight:700;font-size:3.2rem;line-height:.9}
+  .franja li > span:not(.ic){grid-column:2;font-size:1.1rem}
+
+  .cols{display:grid;gap:8px 48px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+  .cols h3{font-size:1.7rem;margin:18px 0 4px;color:var(--taxi)}
+  .cols p{margin:0}
+
+  .clara{background:var(--vereda);color:var(--asfalto)}
+  .precios{list-style:none;margin:0;padding:0;display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(230px,1fr))}
+  .precios li{background:#fff;border:2px solid var(--asfalto);border-radius:12px;padding:22px 20px 18px;display:flex;flex-direction:column;gap:10px;
+    box-shadow:0 4px 0 var(--asfalto);transition:transform .18s,box-shadow .18s,background-color .18s,color .18s}
+  .precios li:hover,.precios li:focus-within{transform:translateY(-5px);box-shadow:0 9px 0 var(--asfalto);background:var(--esmalte);color:#fff}
+  .precios .ic{width:52px;height:52px;color:var(--esmalte);transition:color .18s}
+
+  /* ---------- Íconos animados ---------- */
+  .ic{position:relative;display:block}
+  .ic svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+  .ic .on{opacity:0}
+  .ic .gota{inset:auto;width:26%;height:26%;opacity:0;color:#2f8fe0}
+  li:hover .gota{color:#9fd4ff}
+  .precios li:nth-child(3n+2) .ic svg{animation-delay:-1.1s}
+  .precios li:nth-child(3n) .ic svg{animation-delay:-2.2s}
+  /* luz que se prende */
+  .a-luz .on{color:#F2A900;filter:drop-shadow(0 0 5px #FFCC00);animation:prende 3.6s infinite}
+  .a-luz .off{animation:apaga 3.6s infinite}
+  li:hover .a-luz .on{color:var(--taxi)}
+  @keyframes prende{0%,34%{opacity:0}36%{opacity:1}39%{opacity:.2}42%,88%{opacity:1}92%,100%{opacity:0}}
+  @keyframes apaga{0%,34%{opacity:1}36%{opacity:0}39%{opacity:.8}42%,88%{opacity:0}92%,100%{opacity:1}}
+  /* térmica que sube */
+  .a-llave .on{color:#1f9d55;animation:prende 3.6s infinite}
+  .a-llave .off{animation:apaga 3.6s infinite}
+  li:hover .a-llave .on{color:#7CFFB2}
+  /* ventilador */
+  .a-gira svg{animation:gira 1.8s linear infinite}
+  @keyframes gira{to{transform:rotate(360deg)}}
+  /* chispazo */
+  .a-chispa svg{animation:chispa 2.8s infinite}
+  @keyframes chispa{0%,100%{color:inherit;filter:none}6%{color:#F2A900;filter:drop-shadow(0 0 5px #FFCC00)}10%{color:inherit;filter:none}14%,22%{color:#F2A900;filter:drop-shadow(0 0 6px #FFCC00)}30%{color:inherit;filter:none}}
+  .a-pulso svg{animation:pulso 2.8s infinite}
+  @keyframes pulso{0%,30%,100%{transform:scale(1)}10%{transform:scale(1.14)}20%{transform:scale(.96)}}
+  /* gotas */
+  .a-canilla .gota{left:68%;top:52%;animation:gotea 1.7s ease-in infinite}
+  .a-perdida .gota{left:37%;top:66%;animation:gotea 1.3s ease-in infinite}
+  .a-techo .gota{left:37%;top:48%;animation:gotea 1.9s ease-in infinite}
+  .a-lluvia .gota{left:12%;top:-22%;animation:gotea 1.2s ease-in infinite}
+  .a-lluvia .g2{left:64%;animation-delay:-.6s !important}
+  .a-lluvia svg:first-child{transform-origin:50% 90%;animation:mece 3s ease-in-out infinite}
+  @keyframes gotea{0%{opacity:0;transform:translateY(-20%) scale(.3)}25%{opacity:1;transform:translateY(0) scale(1)}80%{opacity:1}100%{opacity:0;transform:translateY(150%) scale(1)}}
+  .a-mece svg{transform-origin:50% 100%;animation:mece 3s ease-in-out infinite}
+  @keyframes mece{0%,100%{transform:rotate(-5deg)}50%{transform:rotate(5deg)}}
+  /* termotanque que calienta */
+  .a-calor svg{animation:calor 3.2s ease-in-out infinite}
+  @keyframes calor{0%,100%{color:inherit;filter:none}55%{color:#E8590C;filter:drop-shadow(0 0 4px #ff8a3d)}}
+  li:hover .a-calor svg{animation-name:calor-h}
+  @keyframes calor-h{0%,100%{color:inherit}55%{color:#FFB37A}}
+  .a-bombea svg{animation:bombea 1.6s ease-in-out infinite}
+  @keyframes bombea{0%,40%,100%{transform:translateY(0)}12%{transform:translateY(-9%)}24%{transform:translateY(3%)}}
+  /* lavarropas centrifugando */
+  .a-tiembla svg{animation:tiembla 3s linear infinite}
+  @keyframes tiembla{0%,50%,100%{transform:none}5%,15%,25%,35%,45%{transform:translateX(-4%) rotate(-3deg)}10%,20%,30%,40%{transform:translateX(4%) rotate(3deg)}}
+  /* televisor que se cuelga y queda derecho */
+  .a-cuelga svg{transform-origin:50% 0;animation:cuelga 3.6s ease-out infinite}
+  @keyframes cuelga{0%{transform:translateY(-30%) rotate(-12deg);opacity:0}15%{transform:rotate(8deg);opacity:1}28%{transform:rotate(-5deg)}40%{transform:rotate(2deg)}50%,92%{transform:none;opacity:1}100%{transform:none;opacity:0}}
+  .a-cae svg{animation:cae 3.4s ease-out infinite}
+  @keyframes cae{0%{transform:translateY(-45%);opacity:0}16%{transform:translateY(0);opacity:1}24%{transform:translateY(-10%)}32%,92%{transform:none;opacity:1}100%{opacity:0}}
+  /* mueble que se arma de abajo hacia arriba */
+  .a-arma svg{animation:arma 3.8s ease-in-out infinite}
+  @keyframes arma{0%{clip-path:inset(100% 0 0 0)}45%,90%{clip-path:inset(0)}100%{clip-path:inset(0 0 100% 0)}}
+  /* WhatsApp que suena */
+  .a-suena svg{animation:suena 2.6s ease-in-out infinite}
+  @keyframes suena{0%,40%,100%{transform:none}6%,18%,30%{transform:rotate(-12deg) scale(1.08)}12%,24%{transform:rotate(12deg) scale(1.08)}}
+  /* los tres pasos se marcan uno después del otro */
+  .a-paso svg{animation:paso 5.4s ease-in-out infinite}
+  .franja li:nth-child(2) .a-paso svg{animation-delay:1.8s}
+  .franja li:nth-child(3) .a-paso svg{animation-delay:3.6s}
+  @keyframes paso{0%,26%,100%{transform:none}6%{transform:scale(1.18) rotate(-8deg)}13%{transform:scale(1.18) rotate(8deg)}20%{transform:scale(1.05)}}
+  @media (prefers-reduced-motion:reduce){.ic svg{animation:none !important}.ic .gota{display:none}}
+  .precios li:hover .ic,.precios li:focus-within .ic{color:#fff}
+  .precios h4{font:600 1.1rem/1.3 Barlow,system-ui,sans-serif;margin:0;flex:1}
+  .visitas{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+  .precios .inc{font-size:1rem;line-height:1.45}
+  .precios p.rango{font-size:1.6rem;white-space:nowrap}
+  .promo{display:flex;align-items:center;gap:14px;margin:0 0 30px;padding:14px 18px;background:var(--taxi);border:2px solid var(--asfalto);border-radius:12px;font-size:1.2rem;line-height:1.35}
+  .promo .ic{flex:none;width:44px;height:44px}
+  .grupo{font-size:1.9rem;margin:34px 0 14px;color:var(--esmalte)}
+  h2 + .grupo,h2 + * + .grupo{margin-top:0}
+  .precios p{margin:0;font-family:"Barlow Condensed",sans-serif;font-weight:700;font-size:2.1rem;line-height:1}
+  .precios p small{display:block;font:600 .8rem/1.4 Barlow,system-ui,sans-serif;text-transform:uppercase;letter-spacing:.08em;opacity:.75}
+  .precios a{color:inherit;font-family:"Barlow Condensed",sans-serif;font-weight:700;font-size:1.5rem}
+  .nota{font-size:.95rem;margin:24px 0 0}
+
+  .cuatro{display:grid;gap:28px 40px;grid-template-columns:repeat(auto-fit,minmax(210px,1fr))}
+  .cuatro h3{font-size:1.7rem;margin:0 0 6px;color:var(--taxi)}
+  .cuatro p{margin:0}
+  .cuatro div{border-top:4px solid var(--blanco);padding-top:14px}
+
+  .equipo{display:grid;gap:20px 32px;justify-items:start}
+  .equipo img{width:min(100%,380px);height:auto;border-radius:10px;border:3px solid var(--blanco);box-shadow:0 8px 0 rgba(0,0,0,.35)}
+  .equipo p{margin:0;font-size:1.15rem;max-width:46ch}
+  @media (min-width:760px){.equipo{grid-template-columns:380px 1fr;align-content:center}.equipo img{grid-row:1/3}.equipo p{align-self:end}.equipo .resenas{align-self:start}}
+  .resenas{display:inline-block;color:var(--blanco);border:2px solid var(--taxi);border-radius:6px;padding:10px 20px;font:700 1.3rem/1.1 "Barlow Condensed",sans-serif;text-decoration:none;transition:background .12s,color .12s}
+  .resenas:hover{background:var(--taxi);color:#000}
+  .dos{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+
+  details{border-bottom:2px solid var(--asfalto)}
+  details:first-of-type{border-top:2px solid var(--asfalto)}
+  summary{cursor:pointer;list-style:none;padding:16px 40px 16px 0;position:relative;font-family:"Barlow Condensed",sans-serif;font-weight:700;font-size:1.6rem;line-height:1.15}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+";position:absolute;right:6px;top:10px;font-size:2rem;color:var(--esmalte)}
+  details[open] summary::after{content:"–"}
+  details p{margin:0 0 18px;max-width:70ch}
+
+  .barrios h3{font-size:1.7rem;margin:28px 0 12px;color:var(--taxi)}
+  .barrios ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+  /* cada barrio es una chapita esmaltada, como la de arriba */
+  .barrios ul{gap:14px 12px}
+  .barrios li{--rx:0deg;--ry:0deg;--gx:26%;--gy:-8%;position:relative;isolation:isolate;border-radius:7px;padding:10px 24px 9px;
+    background:
+      radial-gradient(110% 85% at var(--gx) var(--gy),rgba(255,255,255,.34),rgba(255,255,255,.06) 38%,transparent 60%),
+      linear-gradient(180deg,rgba(255,255,255,.10),transparent 28%,transparent 62%,rgba(0,0,0,.28)),
+      var(--esmalte);
+    box-shadow:inset 0 1px 1px rgba(255,255,255,.5),inset 0 -2px 1px rgba(0,0,0,.5),
+      0 1px 0 #082f73,0 2px 0 #06245a,0 3px 0 #04183e,0 8px 8px -3px rgba(0,0,0,.6);
+    transform:perspective(500px) rotateX(var(--rx)) rotateY(var(--ry));transition:transform .3s ease-out;
+    font-family:"Barlow Condensed",sans-serif;font-weight:700;font-size:1.1rem;line-height:1.2;text-transform:uppercase;letter-spacing:.04em;
+    -webkit-text-stroke:2px #000;paint-order:stroke fill;text-shadow:0 2px 0 rgba(0,0,0,.55)}
+  .barrios li::before{content:"";position:absolute;inset:4px;border:2px solid #f6f8fb;border-radius:4px;z-index:-1;box-shadow:0 1px 1px rgba(0,0,0,.4),inset 0 1px 1px rgba(0,0,0,.35)}
+  .barrios li::after{content:"";position:absolute;inset:0 9px;pointer-events:none;
+    background:radial-gradient(circle closest-side,#fff 0 12%,#c9d0db 35%,#7d8799 70%,#3b4352 92%,transparent) left center/7px 7px no-repeat,
+               radial-gradient(circle closest-side,#fff 0 12%,#c9d0db 35%,#7d8799 70%,#3b4352 92%,transparent) right center/7px 7px no-repeat}
+
+  .cierre{display:flex;flex-wrap:wrap;align-items:center;gap:24px 40px}
+  .marquita{flex:none;margin:0!important;text-align:center;font:700 3.2rem/1 "Barlow Condensed","Arial Narrow",sans-serif;letter-spacing:.04em}
+  .marquita img{display:block;margin:0 auto 4px}
+  .cierre h2{margin-bottom:8px}
+  .cierre p{margin:0 0 18px}
+  footer{padding:22px 0;font-size:.9rem;opacity:.75}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": ["Electrician", "Plumber"],
+  "name": "MJV Reparaciones Integrales",
+  "description": "Electricidad, plomería y arreglos del hogar a domicilio en todos los barrios de Capital Federal y en zona norte. La visita se descuenta del trabajo, 15% de descuento programando con 10 días, presupuesto por escrito antes de empezar y 30 días de garantía.",
+  "image": "logo.png",
+  "telephone": "+5491154959942",
+  "priceRange": "$$",
+  "currenciesAccepted": "ARS",
+  "paymentAccepted": "Efectivo, transferencia, Mercado Pago, billeteras virtuales",
+  "openingHours": "Mo-Fr 07:00-18:00",
+  "address": {"@type": "PostalAddress", "addressLocality": "Ciudad Autónoma de Buenos Aires", "addressRegion": "CABA", "addressCountry": "AR"},
+  "areaServed": [
+    "Ciudad Autónoma de Buenos Aires", "Capital Federal", "Zona Norte del Gran Buenos Aires",
+    "Agronomía", "Almagro", "Balvanera", "Barracas", "Belgrano", "Boedo", "Caballito", "Chacarita", "Coghlan", "Colegiales", "Constitución", "Flores", "Floresta", "La Boca", "La Paternal", "Liniers", "Mataderos", "Monte Castro", "Monserrat", "Nueva Pompeya", "Núñez", "Palermo", "Parque Avellaneda", "Parque Chacabuco", "Parque Chas", "Parque Patricios", "Puerto Madero", "Recoleta", "Retiro", "Saavedra", "San Cristóbal", "San Nicolás", "San Telmo", "Vélez Sarsfield", "Versalles", "Villa Crespo", "Villa del Parque", "Villa Devoto", "Villa General Mitre", "Villa Lugano", "Villa Luro", "Villa Ortúzar", "Villa Pueyrredón", "Villa Real", "Villa Riachuelo", "Villa Santa Rita", "Villa Soldati", "Villa Urquiza",
+    "Vicente López", "Olivos", "Florida", "Florida Oeste", "La Lucila", "Munro", "Villa Martelli", "Carapachay", "Villa Adelina", "Martínez", "Acassuso", "San Isidro", "Béccar", "Boulogne"
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Precios",
+    "itemListElement": [
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Visita de electricidad con arreglo simple incluido"}, "priceSpecification": {"@type": "PriceSpecification", "minPrice": 80000, "priceCurrency": "ARS"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Visita de plomería con arreglo simple incluido"}, "priceSpecification": {"@type": "PriceSpecification", "minPrice": 80000, "priceCurrency": "ARS"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Cableado por boca"}, "priceSpecification": {"@type": "PriceSpecification", "minPrice": 50000, "maxPrice": 70000, "priceCurrency": "ARS"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Instalar un artefacto de iluminación"}, "priceSpecification": {"@type": "PriceSpecification", "minPrice": 40000, "maxPrice": 70000, "priceCurrency": "ARS"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Instalar un ventilador de techo"}, "priceSpecification": {"@type": "PriceSpecification", "minPrice": 180000, "priceCurrency": "ARS"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Relevamiento técnico de la instalación eléctrica"}, "priceSpecification": {"@type": "PriceSpecification", "minPrice": 180000, "priceCurrency": "ARS"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Cambiar una grifería monocomando de cocina o baño"}, "priceSpecification": {"@type": "PriceSpecification", "minPrice": 140000, "priceCurrency": "ARS"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Cambiar el sifón bajo mesada"}, "priceSpecification": {"@type": "PriceSpecification", "minPrice": 120000, "priceCurrency": "ARS"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Reparar la mochila del baño"}, "priceSpecification": {"@type": "PriceSpecification", "minPrice": 200000, "priceCurrency": "ARS"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Instalación básica de un lavarropas"}, "priceSpecification": {"@type": "PriceSpecification", "minPrice": 100000, "priceCurrency": "ARS"}}
+    ]
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "¿En qué barrios trabajan?", "acceptedAnswer": {"@type": "Answer", "text": "En todos los barrios de Capital Federal: Agronomía, Almagro, Balvanera, Barracas, Belgrano, Boedo, Caballito, Chacarita, Coghlan, Colegiales, Constitución, Flores, Floresta, La Boca, La Paternal, Liniers, Mataderos, Monte Castro, Monserrat, Nueva Pompeya, Núñez, Palermo, Parque Avellaneda, Parque Chacabuco, Parque Chas, Parque Patricios, Puerto Madero, Recoleta, Retiro, Saavedra, San Cristóbal, San Nicolás, San Telmo, Vélez Sarsfield, Versalles, Villa Crespo, Villa del Parque, Villa Devoto, Villa General Mitre, Villa Lugano, Villa Luro, Villa Ortúzar, Villa Pueyrredón, Villa Real, Villa Riachuelo, Villa Santa Rita, Villa Soldati y Villa Urquiza. Y en zona norte: Vicente López, Olivos, Florida, Florida Oeste, La Lucila, Munro, Villa Martelli, Carapachay, Villa Adelina, Martínez, Acassuso, San Isidro, Béccar y Boulogne. En departamentos y casas, para dueños e inquilinos."}},
+    {"@type": "Question", "name": "¿Cuánto sale la visita?", "acceptedAnswer": {"@type": "Answer", "text": "La visita cuesta $80.000 e incluye un arreglo simple de electricidad o de plomería. Si el trabajo es más grande, te pasamos el presupuesto por escrito y esos $80.000 se descuentan del total cuando lo hacemos."}},
+    {"@type": "Question", "name": "¿Los trabajos tienen garantía?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. La mano de obra tiene 30 días de garantía."}},
+    {"@type": "Question", "name": "¿Quiénes van a mi casa?", "acceptedAnswer": {"@type": "Answer", "text": "Vamos nosotros, el equipo de MJV. Trabajamos con agenda: si acordamos un horario, llegamos a ese horario."}},
+    {"@type": "Question", "name": "¿Tienen algún descuento?", "acceptedAnswer": {"@type": "Answer", "text": "Sí: 15% de descuento si programás el trabajo con 10 días o más de anticipación."}},
+    {"@type": "Question", "name": "¿Atienden urgencias?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. Atendemos de lunes a viernes de 7 a 18, y también urgencias de noche, fines de semana y feriados, sujetas a disponibilidad. Escribinos por WhatsApp y te confirmamos."}},
+    {"@type": "Question", "name": "¿Qué medios de pago aceptan?", "acceptedAnswer": {"@type": "Answer", "text": "Todos: efectivo, transferencia, Mercado Pago y billeteras virtuales similares. Hacemos factura."}}
+  ]
+}
+</script>
+</head>
+<body>
+<!-- Íconos: Material Design Icons (pictogrammers.com), licencia Apache 2.0 -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="m-bookshelf" viewBox="0 0 24 24"><path fill="currentColor" d="M9 3v15h3V3zm3 2l4 13l3-1l-4-13zM5 5v13h3V5zM3 19v2h18v-2z"/></symbol><symbol id="m-calendar-clock" viewBox="0 0 24 24"><path fill="currentColor" d="M15 13h1.5v2.82l2.44 1.41l-.75 1.3L15 16.69zm4-5H5v11h4.67c-.43-.91-.67-1.93-.67-3a7 7 0 0 1 7-7c1.07 0 2.09.24 3 .67zM5 21a2 2 0 0 1-2-2V5c0-1.11.89-2 2-2h1V1h2v2h8V1h2v2h1a2 2 0 0 1 2 2v6.1c1.24 1.26 2 2.99 2 4.9a7 7 0 0 1-7 7c-1.91 0-3.64-.76-4.9-2zm11-9.85A4.85 4.85 0 0 0 11.15 16c0 2.68 2.17 4.85 4.85 4.85A4.85 4.85 0 0 0 20.85 16c0-2.68-2.17-4.85-4.85-4.85"/></symbol><symbol id="m-fan" viewBox="0 0 24 24"><path fill="currentColor" d="M12 11a1 1 0 0 0-1 1a1 1 0 0 0 1 1a1 1 0 0 0 1-1a1 1 0 0 0-1-1m.5-9c4.5 0 4.61 3.57 2.25 4.75c-.99.49-1.43 1.54-1.62 2.47c.48.2.9.51 1.22.91c3.7-2 7.68-1.21 7.68 2.37c0 4.5-3.57 4.6-4.75 2.23c-.5-.99-1.56-1.43-2.49-1.62c-.2.48-.51.89-.91 1.23c1.99 3.69 1.2 7.66-2.38 7.66c-4.5 0-4.59-3.58-2.23-4.76c.98-.49 1.42-1.53 1.62-2.45c-.49-.2-.92-.52-1.24-.92C5.96 15.85 2 15.07 2 11.5C2 7 5.56 6.89 6.74 9.26c.5.99 1.55 1.42 2.48 1.61c.19-.48.51-.9.92-1.22C8.15 5.96 8.94 2 12.5 2"/></symbol><symbol id="m-faucet" viewBox="0 0 24 24"><path fill="currentColor" d="M19 14v2h-3v-1.72zm0-1c0-1.1-1-2-2.2-2H10v-1H5v11h5v-7.09zM5 9h5V7l5.36-1.79a.932.932 0 1 0-.61-1.76L5 7z"/></symbol><symbol id="m-flash" viewBox="0 0 24 24"><path fill="currentColor" d="M7 2v11h3v9l7-12h-4l4-8z"/></symbol><symbol id="m-hammer-wrench" viewBox="0 0 24 24"><path fill="currentColor" d="m13.78 15.3l6 6l2.11-2.16l-6-6zm3.72-5.2c-.39 0-.81-.05-1.14-.19L4.97 21.25l-2.11-2.11l7.41-7.4L8.5 9.96l-.72.7l-1.45-1.41v2.86l-.7.7l-3.52-3.56l.7-.7h2.81l-1.4-1.41l3.56-3.56a2.976 2.976 0 0 1 4.22 0L9.89 5.74l1.41 1.4l-.71.71l1.79 1.78l1.82-1.88c-.14-.33-.2-.75-.2-1.12a3.49 3.49 0 0 1 3.5-3.52c.59 0 1.11.14 1.58.42L16.41 6.2l1.5 1.5l2.67-2.67c.28.47.42.97.42 1.6c0 1.92-1.55 3.47-3.5 3.47"/></symbol><symbol id="m-home-roof" viewBox="0 0 24 24"><path fill="currentColor" d="M19 16h3L12 7L2 16h3l7-6.31zM7 8.81V7H4v4.5z"/></symbol><symbol id="m-lightbulb-on" viewBox="0 0 24 24"><path fill="currentColor" d="M12 6a6 6 0 0 1 6 6c0 2.22-1.21 4.16-3 5.2V19a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1v-1.8c-1.79-1.04-3-2.98-3-5.2a6 6 0 0 1 6-6m2 15v1a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-1zm6-10h3v2h-3zM1 11h3v2H1zM13 1v3h-2V1zM4.92 3.5l2.13 2.14l-1.42 1.41L3.5 4.93zm12.03 2.13l2.12-2.13l1.43 1.43l-2.13 2.12z"/></symbol><symbol id="m-lightbulb-outline" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5"/></symbol><symbol id="m-meter-electric-outline" viewBox="0 0 24 24"><path fill="currentColor" d="M21 11a9 9 0 0 0-18 0c0 3.92 2.5 7.24 6 8.5V22h2v-2.06c.33.06.66.06 1 .06s.67 0 1-.06V22h2v-2.5c3.5-1.26 6-4.58 6-8.5m-9 7c-3.86 0-7-3.14-7-7s3.14-7 7-7s7 3.14 7 7s-3.14 7-7 7M8 7h8v2H8zm4.75 3l-3 3L11 14.25L9.75 15.5l1.5 1.5l3-3L13 12.75l1.25-1.25z"/></symbol><symbol id="m-pipe-leak" viewBox="0 0 24 24"><path fill="currentColor" d="M2 5v8h2v-2h6l2-2l-2-2H4V5zm18 0v2h-8l2 2l-2 2h8v2h2V5zm-8 8s-2 2.17-2 3.5a2 2 0 0 0 2 2a2 2 0 0 0 2-2c0-1.33-2-3.5-2-3.5"/></symbol><symbol id="m-power-socket-au" viewBox="0 0 24 24"><path fill="currentColor" d="M4.22 2A2.22 2.22 0 0 0 2 4.22v15.56C2 21 3 22 4.22 22h15.56A2.22 2.22 0 0 0 22 19.78V4.22C22 3 21 2 19.78 2zM12 4a8 8 0 0 1 8 8a8 8 0 0 1-8 8a8 8 0 0 1-8-8a8 8 0 0 1 8-8M8.27 7.54l-2 3.46L8 12l2-3.46zm7.46 0l-1.73 1L16 12l1.73-1zM11 14v4h2v-4z"/></symbol><symbol id="m-television" viewBox="0 0 24 24"><path fill="currentColor" d="M21 17H3V5h18m0-2H3a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h5v2h8v-2h5a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2"/></symbol><symbol id="m-toggle-switch" viewBox="0 0 24 24"><path fill="currentColor" d="M17 7H7a5 5 0 0 0-5 5a5 5 0 0 0 5 5h10a5 5 0 0 0 5-5a5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3a3 3 0 0 1 3-3a3 3 0 0 1 3 3a3 3 0 0 1-3 3"/></symbol><symbol id="m-toggle-switch-off-outline" viewBox="0 0 24 24"><path fill="currentColor" d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3s3-1.34 3-3s-1.34-3-3-3"/></symbol><symbol id="m-toilet" viewBox="0 0 24 24"><path fill="currentColor" d="M9 22h8v-2.5c2.41-1.63 4-4.38 4-7.5V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v8H3c0 3.09 2 6 6 7.5zm-3.71-8h13.42A7.02 7.02 0 0 1 15 18.33V20h-4v-1.67C9 18 5.86 15.91 5.29 14M15 4h4v8h-4zm1 1v3h2V5z"/></symbol><symbol id="m-umbrella" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a9 9 0 0 1 9 9h-8v8a3 3 0 0 1-3 3a3 3 0 0 1-3-3v-1h2v1a1 1 0 0 0 1 1a1 1 0 0 0 1-1v-8H3a9 9 0 0 1 9-9"/></symbol><symbol id="m-wardrobe-outline" viewBox="0 0 24 24"><path fill="currentColor" d="M6 2a2 2 0 0 0-2 2v15c0 1.11.89 2 2 2v1h2v-1h8v1h2v-1c1.11 0 2-.89 2-2V4a2 2 0 0 0-2-2zm0 2h5v15H6zm7 0h5v15h-5zm-5 6v3h2v-3zm6 0v3h2v-3z"/></symbol><symbol id="m-washing-machine" viewBox="0 0 24 24"><path fill="currentColor" d="M14.83 11.17a4.01 4.01 0 0 1 0 5.66a4.01 4.01 0 0 1-5.66 0zM6 2h12a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2m1 2a1 1 0 0 0-1 1a1 1 0 0 0 1 1a1 1 0 0 0 1-1a1 1 0 0 0-1-1m3 0a1 1 0 0 0-1 1a1 1 0 0 0 1 1a1 1 0 0 0 1-1a1 1 0 0 0-1-1m2 4a6 6 0 0 0-6 6a6 6 0 0 0 6 6a6 6 0 0 0 6-6a6 6 0 0 0-6-6"/></symbol><symbol id="m-water" viewBox="0 0 24 24"><path fill="currentColor" d="M12 20a6 6 0 0 1-6-6c0-4 6-10.75 6-10.75S18 10 18 14a6 6 0 0 1-6 6"/></symbol><symbol id="m-water-boiler" viewBox="0 0 24 24"><path fill="currentColor" d="M8 2c-1.11 0-2 .89-2 2v12c0 1.11.89 2 2 2h1v2H6v2h3c1.11 0 2-.89 2-2v-2h2v2c0 1.11.89 2 2 2h3v-2h-3v-2h1c1.11 0 2-.89 2-2V4c0-1.11-.89-2-2-2zm4 2.97a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2a2 2 0 0 1 2-2m-2 9.53h4V16h-4z"/></symbol><symbol id="m-water-pump" viewBox="0 0 24 24"><path fill="currentColor" d="M19 14.5s2 2.17 2 3.5a2 2 0 0 1-2 2a2 2 0 0 1-2-2c0-1.33 2-3.5 2-3.5M5 18V9a2 2 0 0 1-2-2a2 2 0 0 1 2-2V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v1h8a2 2 0 0 1 2 2v4a1 1 0 0 1 1 1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1a1 1 0 0 1 1-1V9h-6v9h1a2 2 0 0 1 2 2v2H2v-2a2 2 0 0 1 2-2z"/></symbol><symbol id="m-whatsapp" viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91c0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.23 8.23 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23c-1.48 0-2.93-.39-4.19-1.15l-.3-.17l-3.12.82l.83-3.04l-.2-.32a8.2 8.2 0 0 1-1.26-4.38c.01-4.54 3.7-8.24 8.25-8.24M8.53 7.33c-.16 0-.43.06-.66.31c-.22.25-.87.86-.87 2.07c0 1.22.89 2.39 1 2.56c.14.17 1.76 2.67 4.25 3.73c.59.27 1.05.42 1.41.53c.59.19 1.13.16 1.56.1c.48-.07 1.46-.6 1.67-1.18s.21-1.07.15-1.18c-.07-.1-.23-.16-.48-.27c-.25-.14-1.47-.74-1.69-.82c-.23-.08-.37-.12-.56.12c-.16.25-.64.81-.78.97c-.15.17-.29.19-.53.07c-.26-.13-1.06-.39-2-1.23c-.74-.66-1.23-1.47-1.38-1.72c-.12-.24-.01-.39.11-.5c.11-.11.27-.29.37-.44c.13-.14.17-.25.25-.41c.08-.17.04-.31-.02-.43c-.06-.11-.56-1.35-.77-1.84c-.2-.48-.4-.42-.56-.43c-.14 0-.3-.01-.47-.01"/></symbol></svg>
+
+<header class="hero">
+  <div class="ancho">
+    <div class="chapa">
+      <i class="remache" aria-hidden="true"></i><i class="remache" aria-hidden="true"></i><i class="remache" aria-hidden="true"></i><i class="remache" aria-hidden="true"></i>
+      <div class="marca"><img src="insignia-blanca.png" alt="" width="600" height="667"><h1><b>MJV</b> <span>Reparaciones Integrales</span></h1></div>
+      <p class="cond"><span>Electricidad y plomería</span><span>Capital Federal y zona norte</span></p>
+    </div>
+    <div class="bajo">
+    <p class="bajada">Electricidad, plomería y arreglos generales del hogar. Vamos nosotros, una sola vez, con el presupuesto por escrito antes de empezar.</p>
+    <a class="wa" href="contacto.html">¡Contactanos!</a>
+    </div>
+    <ul class="sellos">
+      <li>La visita se descuenta del trabajo</li>
+      <li>30 días de garantía</li>
+      <li>Presupuesto por escrito</li>
+      <li>15% de descuento programando con 10 días</li>
+    </ul>
+  </div>
+</header>
+
+<main>
+<section class="franja" id="como">
+  <div class="ancho">
+    <h2>Cómo trabajamos</h2>
+    <ol>
+      <li><span class="ic a-paso" aria-hidden="true"><svg><use href="#m-whatsapp"/></svg></span><span>Nos escribís por WhatsApp con fotos o un video del problema.</span></li>
+      <li><span class="ic a-paso" aria-hidden="true"><svg><use href="#m-calendar-clock"/></svg></span><span>Te mandamos el presupuesto por escrito y coordinamos día y hora. Si es una urgencia, la priorizamos.</span></li>
+      <li><span class="ic a-paso" aria-hidden="true"><svg><use href="#m-hammer-wrench"/></svg></span><span>Vamos nosotros y hacemos el trabajo, con 30 días de garantía.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="ancho" id="servicios">
+  <h2>Qué arreglamos</h2>
+  <div class="cols">
+    <div><h3>Electricidad</h3><p>Tableros, térmicas, cortocircuitos, tomas, llaves de luz, luminarias y ventiladores de techo.</p></div>
+    <div><h3>Plomería</h3><p>Pérdidas, canillas y griferías, inodoros, termotanques eléctricos y bombas presurizadoras.</p></div>
+    <div><h3>Colgar y colocar</h3><p>Televisores y estantes.</p></div>
+    <div><h3>Armado e instalación</h3><p>Muebles y lavarropas.</p></div>
+    <div><h3>Techos y humedad</h3><p>Membranas, filtraciones y humedad.</p></div>
+  </div>
+</section>
+
+<section class="clara" id="precios">
+  <div class="ancho">
+    <h2>Precios</h2>
+    <p class="promo"><span class="ic a-paso" aria-hidden="true"><svg><use href="#m-calendar-clock"/></svg></span><span><b>15% de descuento</b> si programás el trabajo con 10 días o más de anticipación.</span></p>
+    <h3 class="grupo">Visita con arreglo incluido</h3>
+    <ul class="precios visitas">
+      <li><span class="ic a-pulso" aria-hidden="true"><svg><use href="#m-power-socket-au"/></svg></span><h4>Visita de electricidad</h4><span class="inc">Incluye cambiar un tomacorriente, una tecla o un artefacto de iluminación.</span><p><small>Precio</small>$80.000</p></li>
+      <li><span class="ic a-canilla" aria-hidden="true"><svg><use href="#m-faucet"/></svg><svg class="gota"><use href="#m-water"/></svg></span><h4>Visita de plomería</h4><span class="inc">Incluye reparar una grifería, cambiar los cueros o un flexible, regular un depósito de pared o una mochila, o limpiar el sifón de la cocina.</span><p><small>Precio</small>$80.000</p></li>
+    </ul>
+    <p class="nota">Si el arreglo es más grande y hace falta un relevamiento y un presupuesto, la visita cuesta lo mismo y se descuenta del total cuando hacemos el trabajo.</p>
+    <h3 class="grupo">Electricidad</h3>
+    <ul class="precios">
+      <li><span class="ic a-chispa" aria-hidden="true"><svg><use href="#m-flash"/></svg></span><h4>Cableado por boca</h4><p class="rango"><small>Precio por boca</small>$50.000 a $70.000</p></li>
+      <li><span class="ic a-luz" aria-hidden="true"><svg class="off"><use href="#m-lightbulb-outline"/></svg><svg class="on"><use href="#m-lightbulb-on"/></svg></span><h4>Instalar un artefacto de iluminación</h4><p class="rango"><small>Precio por artefacto</small>$40.000 a $70.000</p></li>
+      <li><span class="ic a-gira" aria-hidden="true"><svg><use href="#m-fan"/></svg></span><h4>Instalar un ventilador de techo</h4><p><small>Precio desde</small>$180.000</p></li>
+      <li><span class="ic a-chispa" aria-hidden="true"><svg><use href="#m-meter-electric-outline"/></svg></span><h4>Relevamiento técnico de la instalación eléctrica</h4><p><small>Precio desde</small>$180.000</p></li>
+    </ul>
+    <h3 class="grupo">Plomería</h3>
+    <ul class="precios">
+      <li><span class="ic a-canilla" aria-hidden="true"><svg><use href="#m-faucet"/></svg><svg class="gota"><use href="#m-water"/></svg></span><h4>Cambiar una grifería monocomando de cocina o baño</h4><p><small>Precio desde</small>$140.000</p></li>
+      <li><span class="ic a-perdida" aria-hidden="true"><svg><use href="#m-pipe-leak"/></svg><svg class="gota"><use href="#m-water"/></svg></span><h4>Cambiar el sifón bajo mesada</h4><p><small>Precio desde</small>$120.000</p></li>
+      <li><span class="ic a-mece" aria-hidden="true"><svg><use href="#m-toilet"/></svg></span><h4>Reparar la mochila del baño</h4><p><small>Precio desde</small>$200.000</p></li>
+      <li><span class="ic a-tiembla" aria-hidden="true"><svg><use href="#m-washing-machine"/></svg></span><h4>Instalación básica de un lavarropas</h4><p><small>Precio desde</small>$100.000</p></li>
+      <li><span class="ic a-suena" aria-hidden="true"><svg><use href="#m-whatsapp"/></svg></span><h4>¿Tenés otro arreglo?</h4><p><a href="contacto.html">Consultanos</a></p></li>
+    </ul>
+    <p class="nota">Mano de obra, sin materiales. Pagás en efectivo, por transferencia, con Mercado Pago o billeteras virtuales similares.</p>
+  </div>
+</section>
+
+<section class="ancho">
+  <h2>Sin sorpresas</h2>
+  <div class="cuatro">
+    <div><h3>La visita se descuenta</h3><p>La visita cuesta $80.000 y se descuenta del total cuando hacemos el trabajo.</p></div>
+    <div><h3>30 días de garantía</h3><p>Toda la mano de obra tiene 30 días de garantía.</p></div>
+    <div><h3>Presupuesto por escrito</h3><p>Te pasamos el presupuesto por WhatsApp antes de empezar.</p></div>
+    <div><h3>Respuesta en el día</h3><p>Contestamos los mensajes el mismo día.</p></div>
+  </div>
+</section>
+
+<section class="ancho">
+  <h2>Quiénes vamos a tu casa</h2>
+  <div class="equipo">
+    <img src="equipo.jpg" alt="El equipo de MJV Reparaciones Integrales junto a la camioneta" width="900" height="507" loading="lazy">
+    <p>Vamos nosotros, el equipo de MJV. Trabajamos con agenda: si acordamos un horario, llegamos a ese horario. Toda la mano de obra tiene 30 días de garantía.</p>
+    <!-- RESEÑAS: cambiar el href por el link del perfil de Google Business (Perfil > Compartir) cuando Google lo valide. -->
+    <a class="resenas" href="https://www.google.com/search?q=MJV+Reparaciones+Integrales+rese%C3%B1as" target="_blank" rel="noopener">Mirá nuestras reseñas en Google ↗</a>
+  </div>
+</section>
+
+<section class="clara" id="preguntas">
+  <div class="ancho">
+    <h2>Preguntas frecuentes</h2>
+    <details>
+      <summary>¿En qué barrios trabajan?</summary>
+      <p>En todos los barrios de Capital Federal y en zona norte, en departamentos y casas, para dueños e inquilinos. La <a href="#barrios">lista completa de barrios</a> está más abajo.</p>
+    </details>
+    <details>
+      <summary>¿Cuánto sale la visita?</summary>
+      <p>La visita cuesta $80.000 e incluye un arreglo simple de electricidad o de plomería. Si el trabajo es más grande, te pasamos el presupuesto por escrito y esos $80.000 se descuentan del total cuando lo hacemos.</p>
+    </details>
+    <details>
+      <summary>¿Tienen algún descuento?</summary>
+      <p>Sí: 15% de descuento si programás el trabajo con 10 días o más de anticipación.</p>
+    </details>
+    <details>
+      <summary>¿Los trabajos tienen garantía?</summary>
+      <p>Sí. La mano de obra tiene 30 días de garantía.</p>
+    </details>
+    <details>
+      <summary>¿Quiénes van a mi casa?</summary>
+      <p>Vamos nosotros, el equipo de MJV. Trabajamos con agenda: si acordamos un horario, llegamos a ese horario.</p>
+    </details>
+    <details>
+      <summary>¿Atienden urgencias?</summary>
+      <p>Sí. Atendemos de lunes a viernes de 7 a 18, y también urgencias de noche, fines de semana y feriados, sujetas a disponibilidad. Escribinos por WhatsApp y te confirmamos.</p>
+    </details>
+    <details>
+      <summary>¿Qué medios de pago aceptan?</summary>
+      <p>Todos: efectivo, transferencia, Mercado Pago y billeteras virtuales similares. Hacemos factura.</p>
+    </details>
+  </div>
+</section>
+
+<section class="ancho barrios" id="barrios">
+  <h2>Barrios donde trabajamos</h2>
+  <p>Electricista y plomero a domicilio en todos los barrios de la Ciudad de Buenos Aires y en zona norte.</p>
+  <h3>Capital Federal</h3>
+  <ul>
+    <li>Agronomía</li><li>Almagro</li><li>Balvanera</li><li>Barracas</li><li>Belgrano</li><li>Boedo</li><li>Caballito</li><li>Chacarita</li><li>Coghlan</li><li>Colegiales</li><li>Constitución</li><li>Flores</li><li>Floresta</li><li>La Boca</li><li>La Paternal</li><li>Liniers</li><li>Mataderos</li><li>Monte Castro</li><li>Monserrat</li><li>Nueva Pompeya</li><li>Núñez</li><li>Palermo</li><li>Parque Avellaneda</li><li>Parque Chacabuco</li><li>Parque Chas</li><li>Parque Patricios</li><li>Puerto Madero</li><li>Recoleta</li><li>Retiro</li><li>Saavedra</li><li>San Cristóbal</li><li>San Nicolás</li><li>San Telmo</li><li>Vélez Sarsfield</li><li>Versalles</li><li>Villa Crespo</li><li>Villa del Parque</li><li>Villa Devoto</li><li>Villa General Mitre</li><li>Villa Lugano</li><li>Villa Luro</li><li>Villa Ortúzar</li><li>Villa Pueyrredón</li><li>Villa Real</li><li>Villa Riachuelo</li><li>Villa Santa Rita</li><li>Villa Soldati</li><li>Villa Urquiza</li>
+  </ul>
+  <h3>Zona norte</h3>
+  <ul>
+    <li>Vicente López</li><li>Olivos</li><li>Florida</li><li>Florida Oeste</li><li>La Lucila</li><li>Munro</li><li>Villa Martelli</li><li>Carapachay</li><li>Villa Adelina</li><li>Martínez</li><li>Acassuso</li><li>San Isidro</li><li>Béccar</li><li>Boulogne</li>
+  </ul>
+</section>
+</main>
+
+<section class="franja">
+  <div class="ancho cierre">
+    <p class="marquita"><img src="insignia.png" alt="" width="110" height="120" loading="lazy">MJV</p>
+    <div>
+      <h2>Lunes a viernes de 7 a 18, y urgencias</h2>
+      <p>Las urgencias las atendemos también de noche, fines de semana y feriados, sujetas a disponibilidad.</p>
+      <p>Contestamos los mensajes en el día. WhatsApp: <a href="https://wa.me/5491154959942?text=Hola%20MJV%2C%20les%20mando%20fotos%20de%20lo%20que%20hay%20que%20arreglar%20en%20casa." style="color:inherit;font-weight:600">11 5495-9942</a>.</p>
+      <a class="wa" href="contacto.html">¡Contactanos!</a>
+    </div>
+  </div>
+</section>
+
+<footer class="ancho">© 2026 MJV Reparaciones Integrales. Electricidad, plomería y arreglos del hogar en Capital Federal y zona norte.</footer>
+
+<script>
+  // Las chapas se inclinan y el brillo sigue al puntero. Solo con mouse y si no se pidió reducir el movimiento.
+  if (matchMedia('(hover:hover) and (prefers-reduced-motion:no-preference)').matches) for (const c of document.querySelectorAll('.chapa, .barrios li')) {
+    c.onpointermove = e => {
+      const r = c.getBoundingClientRect(), x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height;
+      const k = c.matches('li') ? 22 : 5;  // las chapitas se inclinan más para que se note
+      c.style.cssText = `--ry:${(x - .5) * k}deg;--rx:${(.5 - y) * k}deg;--gx:${x * 100}%;--gy:${y * 100}%;transition:none`;
+    };
+    c.onpointerleave = () => c.style.cssText = '';
+  }
+</script>
+</body>
+</html>

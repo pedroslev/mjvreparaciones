@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pedir presupuesto | MJV Reparaciones Integrales</title>
+<meta name="description" content="Contanos qué hay que arreglar, en qué barrio y qué horarios te quedan cómodos. Te respondemos por WhatsApp con el presupuesto por escrito.">
+<meta name="theme-color" content="#0B3D91">
+<link rel="icon" href="favicon.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{--esmalte:#0B3D91;--asfalto:#23272E;--taxi:#FFCC00;--vereda:#E4E6EA}
+  *{box-sizing:border-box}
+  html{overscroll-behavior:none}
+  body{margin:0;color:var(--asfalto);font:18px/1.5 Barlow,system-ui,sans-serif;min-height:100svh;
+    background:radial-gradient(85% 60% at 50% 0,rgba(255,255,255,.14),transparent 75%),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='88' height='56'%3E%3Cpath d='M0 1h88M0 29h88M1 0v28M45 28v28' stroke='%2315181d' stroke-width='3' fill='none'/%3E%3Cpath d='M0 3.5h88M0 31.5h88M3.5 2v26M47.5 30v26' stroke='%23fff' stroke-opacity='.05' stroke-width='2' fill='none'/%3E%3C/svg%3E") #2a2f38}
+  .cond,h1,legend,label.t,button{font-family:"Barlow Condensed","Arial Narrow",sans-serif;font-weight:700}
+  main{max-width:720px;margin:0 auto;padding:20px 16px 56px}
+  .volver{display:inline-block;color:#fff;font-weight:600;margin-bottom:14px}
+  /* chapa chica con el nombre */
+  .chapa{display:block;text-decoration:none;color:#fff;text-align:center;text-transform:uppercase;letter-spacing:.04em;font-size:clamp(1.5rem,6vw,2.3rem);line-height:1;
+    padding:22px 16px;border-radius:14px;background:linear-gradient(180deg,rgba(255,255,255,.14),transparent 35%,rgba(0,0,0,.25)),var(--esmalte);
+    box-shadow:inset 0 0 0 9px var(--esmalte),inset 0 0 0 12px #f6f8fb,inset 0 2px 1px rgba(255,255,255,.5),0 5px 0 #04183e,0 16px 18px -6px rgba(0,0,0,.6);
+    -webkit-text-stroke:3px #000;paint-order:stroke fill}
+  form{background:var(--vereda);border-radius:14px;padding:clamp(18px,5vw,36px);margin-top:26px;box-shadow:0 6px 0 #111,0 20px 24px -8px rgba(0,0,0,.6)}
+  h1{font-size:clamp(2rem,7vw,2.8rem);line-height:1;margin:0 0 6px}
+  form > p{margin:0 0 22px}
+  label.t,legend{display:block;font-size:1.5rem;line-height:1.1;margin:22px 0 8px;padding:0}
+  input[type=text],select,textarea{width:100%;font:inherit;color:inherit;background:#fff;border:2px solid var(--asfalto);border-radius:8px;padding:11px 12px}
+  textarea{min-height:120px;resize:vertical}
+  :is(input,select,textarea,button,a):focus-visible,.semana input:focus-visible + span{outline:4px solid var(--esmalte);outline-offset:2px}
+  .volver:focus-visible,.chapa:focus-visible{outline-color:var(--taxi)}
+  #otra{margin-top:10px}
+  fieldset{border:0;margin:0;padding:0;min-width:0}
+  .ayuda{font-size:.95rem;margin:0 0 10px}
+  #grilla[hidden]{display:none}
+  .ops{display:grid;gap:8px;margin-bottom:16px}
+  .op{display:flex;gap:12px;align-items:center;background:#fff;border:2px solid var(--asfalto);border-radius:8px;padding:12px;font-weight:600;cursor:pointer}
+  .op:has(input:checked){background:var(--esmalte);border-color:var(--esmalte);color:#fff}
+  .op input{width:22px;height:22px;flex:none;margin:0;accent-color:var(--taxi)}
+  /* semana: una columna por día, una fila por hora */
+  .semana{width:100%;border-collapse:separate;border-spacing:4px;table-layout:fixed;margin:0 -4px 12px;width:calc(100% + 8px)}
+  .semana th{font:600 .85rem/1.2 Barlow,system-ui,sans-serif;text-align:right;padding-right:4px;white-space:nowrap;width:3.6em}
+  .semana thead th{width:auto;padding:0}
+  .semana thead button{width:100%;font-size:1.15rem;background:var(--asfalto);color:#fff;border:0;border-radius:6px;padding:8px 0;cursor:pointer;box-shadow:none}
+  .semana td{padding:0}
+  .semana label{display:block;position:relative;height:40px;cursor:pointer}
+  .semana input{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:pointer}
+  .semana span{position:absolute;inset:0;background:#fff;border:2px solid #9aa1ad;border-radius:6px;transition:background-color .12s,border-color .12s}
+  .semana label:hover span{border-color:var(--esmalte)}
+  .semana input:checked + span{background:var(--esmalte);border-color:var(--esmalte)}
+  .semana input:checked + span::after{content:"✓";position:absolute;inset:0;display:grid;place-items:center;color:#fff;font-weight:700}
+  #error{color:#b00020;font-weight:600;margin:14px 0 0;min-height:1.5em}
+  button[type=submit]{display:block;width:100%;margin-top:8px;background:var(--taxi);color:#000;font-size:1.8rem;line-height:1.1;border:0;border-radius:8px;padding:15px;cursor:pointer;box-shadow:0 5px 0 #9a7b00;transition:transform .12s,box-shadow .12s}
+  button[type=submit]:hover{transform:translateY(2px);box-shadow:0 3px 0 #9a7b00}
+  .pie{font-size:.95rem;text-align:center;margin:14px 0 0}
+  .vh{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+</style>
+</head>
+<body>
+<main>
+  <a class="volver" href="index.html">‹ Volver</a>
+  <a class="chapa cond" href="index.html">MJV Reparaciones Integrales</a>
+
+  <form id="f" novalidate>
+    <h1>Contanos qué hay que arreglar</h1>
+    <p>Completá estos datos y te abrimos WhatsApp con el mensaje ya armado. Te respondemos en el día con el presupuesto por escrito.</p>
+    <noscript><p><strong>Este formulario necesita JavaScript.</strong> Podés escribirnos directo: <a href="https://wa.me/5491154959942">WhatsApp 11 5495-9942</a>.</p></noscript>
+
+    <label class="t" for="nombre">Tu nombre</label>
+    <input type="text" id="nombre" autocomplete="given-name" required>
+
+    <label class="t" for="barrio">Tu barrio</label>
+    <select id="barrio" required>
+      <option value="">Elegí tu barrio</option>
+      <optgroup label="Capital Federal"><option>Agronomía</option><option>Almagro</option><option>Balvanera</option><option>Barracas</option><option>Belgrano</option><option>Boedo</option><option>Caballito</option><option>Chacarita</option><option>Coghlan</option><option>Colegiales</option><option>Constitución</option><option>Flores</option><option>Floresta</option><option>La Boca</option><option>La Paternal</option><option>Liniers</option><option>Mataderos</option><option>Monte Castro</option><option>Monserrat</option><option>Nueva Pompeya</option><option>Núñez</option><option>Palermo</option><option>Parque Avellaneda</option><option>Parque Chacabuco</option><option>Parque Chas</option><option>Parque Patricios</option><option>Puerto Madero</option><option>Recoleta</option><option>Retiro</option><option>Saavedra</option><option>San Cristóbal</option><option>San Nicolás</option><option>San Telmo</option><option>Vélez Sarsfield</option><option>Versalles</option><option>Villa Crespo</option><option>Villa del Parque</option><option>Villa Devoto</option><option>Villa General Mitre</option><option>Villa Lugano</option><option>Villa Luro</option><option>Villa Ortúzar</option><option>Villa Pueyrredón</option><option>Villa Real</option><option>Villa Riachuelo</option><option>Villa Santa Rita</option><option>Villa Soldati</option><option>Villa Urquiza</option></optgroup>
+      <optgroup label="Zona norte"><option>Vicente López</option><option>Olivos</option><option>Florida</option><option>Florida Oeste</option><option>La Lucila</option><option>Munro</option><option>Villa Martelli</option><option>Carapachay</option><option>Villa Adelina</option><option>Martínez</option><option>Acassuso</option><option>San Isidro</option><option>Béccar</option><option>Boulogne</option></optgroup>
+      <optgroup label="Otra zona"><option value="otro">Otro (GBA)</option></optgroup>
+    </select>
+    <input type="text" id="otra" placeholder="¿Qué localidad?" aria-label="¿Qué localidad del GBA?" hidden>
+
+    <label class="t" for="problema">¿Cuál es el problema?</label>
+    <textarea id="problema" placeholder="Por ejemplo: me gotea la ducha." required></textarea>
+
+    <fieldset>
+      <legend>¿Qué horarios te quedan cómodos?</legend>
+      <div class="ops">
+        <label class="op"><input type="radio" name="cuando" value="elijo" checked> Elijo días y horarios</label>
+        <label class="op"><input type="radio" name="cuando" value="sinpref"> No tengo preferencia: me adapto a la agenda de MJV</label>
+        <label class="op"><input type="radio" name="cuando" value="programado"> Puedo esperar 10 días o más: quiero el 15% de descuento</label>
+        <label class="op"><input type="radio" name="cuando" value="urgente"> Es una urgencia: lo necesito en 24 hs</label>
+      </div>
+      <fieldset id="grilla"><legend class="vh">Días y horarios</legend>
+        <p class="ayuda">Tocá todos los horarios en los que podemos ir. Tocando el día marcás el día entero.</p>
+        <table class="semana"><thead></thead><tbody></tbody></table>
+      </fieldset>
+    </fieldset>
+
+    <p id="error" role="alert"></p>
+    <button type="submit">Contactar por WhatsApp</button>
+    <p class="pie">Después, en el chat, podés sumar fotos o un video del problema.</p>
+  </form>
+</main>
+
+<script>
+  const TEL = '5491154959942';
+  const DIAS = ['lunes', 'martes', 'miércoles', 'jueves', 'viernes'];
+  const DESDE = 7, HASTA = 18;                       // atención: lunes a viernes de 7 a 18
+  const $ = id => document.getElementById(id);
+  const lista = new Intl.ListFormat('es', { type: 'conjunction' });
+
+  // [9,10,15] -> "de 9 a 11 y de 15 a 16": junta las horas seguidas en un solo tramo
+  const tramos = horas => {
+    const t = [];
+    for (const h of [...horas].sort((a, b) => a - b)) t.length && t.at(-1)[1] === h ? t.at(-1)[1]++ : t.push([h, h + 1]);
+    return lista.format(t.map(([a, b]) => `de ${a} a ${b}`));
+  };
+  const armarMensaje = ({ nombre, barrio, problema, horarios, cuando }) =>
+    `Hola MJV, soy ${nombre}, de ${barrio}.\n\n` +
+    `Mi problema: ${problema}\n\n` +
+    (cuando === 'urgente' ? 'Es una urgencia: lo necesito dentro de las próximas 24 horas.'
+     : cuando === 'programado' ? 'Puedo programarlo con 10 días o más de anticipación, así aprovecho el 15% de descuento.'
+     : cuando === 'sinpref' ? 'No tengo preferencia de horario: me adapto a la agenda de MJV.'
+     : `Mis horarios disponibles para arreglarlo serían: ${lista.format(horarios.map(([d, hs]) => `${DIAS[d]} ${tramos(hs)}`))}.`);
+  console.assert(tramos([10, 9, 15]) === 'de 9 a 11 y de 15 a 16', 'tramos');
+
+  // grilla de la semana
+  const tabla = document.querySelector('.semana');
+  tabla.tHead.innerHTML = '<tr><th></th>' + DIAS.map((d, i) => `<th><button type="button" class="cond" data-d="${i}" aria-label="Marcar todo el ${d}">${d.slice(0, 3)}</button></th>`).join('') + '</tr>';
+  for (let h = DESDE; h < HASTA; h++)
+    tabla.tBodies[0].insertAdjacentHTML('beforeend', `<tr><th>${h} a ${h + 1}</th>` +
+      DIAS.map((d, i) => `<td><label><input type="checkbox" data-d="${i}" data-h="${h}" aria-label="${d} de ${h} a ${h + 1}"><span></span></label></td>`).join('') + '</tr>');
+  tabla.tHead.onclick = e => {                       // tocar el día marca (o desmarca) toda la columna
+    if (!e.target.dataset.d) return;
+    const col = [...tabla.querySelectorAll(`input[data-d="${e.target.dataset.d}"]`)], todo = col.every(c => c.checked);
+    col.forEach(c => c.checked = !todo);
+  };
+
+  const cuando = () => $('f').elements.cuando.value;
+  document.querySelector('.ops').onchange = () => $('grilla').hidden = $('grilla').disabled = cuando() !== 'elijo';  // la semana solo se muestra si elige horarios
+  $('barrio').onchange = e => { $('otra').hidden = e.target.value !== 'otro'; $('otra').required = !$('otra').hidden; };
+
+  $('f').onsubmit = e => {
+    e.preventDefault();
+    $('error').textContent = '';
+    const falta = [...e.target.querySelectorAll('[required]')].find(c => !c.value.trim());
+    if (falta) { $('error').textContent = 'Nos falta un dato: completá el campo marcado.'; return falta.focus(); }
+    const porDia = DIAS.map(() => []);
+    tabla.querySelectorAll('tbody input:checked').forEach(c => porDia[c.dataset.d].push(+c.dataset.h));
+    const horarios = porDia.map((hs, d) => [d, hs]).filter(([, hs]) => hs.length);
+    if (cuando() === 'elijo' && !horarios.length) { $('error').textContent = 'Marcá al menos un horario, o elegí una de las otras opciones.'; return tabla.querySelector('button').focus(); }
+    const barrio = $('barrio').value === 'otro' ? `${$('otra').value.trim()} (GBA)` : $('barrio').value;
+    const msj = armarMensaje({ nombre: $('nombre').value.trim(), barrio, problema: $('problema').value.trim(), horarios, cuando: cuando() });
+    window.open(`https://wa.me/${TEL}?text=${encodeURIComponent(msj)}`, '_blank', 'noopener');
+  };
+</script>
+</body>
+</html>
