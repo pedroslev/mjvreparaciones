@@ -4,18 +4,26 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Electricista y plomero a domicilio en Capital Federal y zona norte | MJV Reparaciones Integrales</title>
-<meta name="description" content="MJV Reparaciones Integrales: electricidad, plomería y arreglos del hogar a domicilio en todos los barrios de Capital Federal y en zona norte. La visita se descuenta del trabajo, 15% de descuento programando con 10 días, presupuesto por escrito y 30 días de garantía.">
+<meta name="description" content="Electricista y plomero a domicilio en Saavedra, Núñez, Belgrano, Villa Urquiza, Vicente López, Olivos y todos los barrios de Capital Federal. Visita que se descuenta del trabajo, presupuesto por escrito y 30 días de garantía.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="es_AR">
-<meta property="og:title" content="MJV Reparaciones Integrales: electricidad, plomería y arreglos del hogar">
+<meta property="og:title" content="Electricista y plomero a domicilio | MJV Reparaciones Integrales">
 <meta property="og:description" content="A domicilio en Capital Federal y zona norte. La visita se descuenta del trabajo, presupuesto por escrito y 30 días de garantía.">
-<meta property="og:image" content="logo.png">
 <meta name="theme-color" content="#0B3D91">
 <link rel="icon" href="favicon.png" type="image/png">
-<!-- <link rel="canonical" href="https://DOMINIO/"> : falta el dominio; sumar también "url" en el JSON-LD -->
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="canonical" href="https://mvjreparaciones.vercel.app/">
+<meta property="og:url" content="https://mvjreparaciones.vercel.app/">
+<meta property="og:site_name" content="MJV Reparaciones Integrales">
+<meta property="og:image" content="https://mvjreparaciones.vercel.app/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Chapa azul de MJV Reparaciones Integrales: electricidad y plomería en Capital Federal y zona norte">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;600&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;600&display=swap"></noscript>
 <style>
   :root{--esmalte:#0B3D91;--blanco:#fff;--asfalto:#23272E;--taxi:#FFCC00;--vereda:#E4E6EA}
   *{box-sizing:border-box}
@@ -90,16 +98,16 @@
   @property --gx{syntax:"<percentage>";inherits:false;initial-value:26%}
   @property --gy{syntax:"<percentage>";inherits:false;initial-value:-8%}
   @media (prefers-reduced-motion:no-preference){
-    .chapa{animation:colgar .55s cubic-bezier(.3,1.5,.5,1) backwards, brillo .8s 1.45s ease-in-out backwards}
+    .chapa{animation:colgar .45s cubic-bezier(.3,1.5,.5,1) backwards, brillo .7s 1.1s ease-in-out backwards}
     .remache{animation:atornillar .35s ease-out backwards}
-    .remache:nth-of-type(1){animation-delay:.45s} .remache:nth-of-type(2){animation-delay:.55s}
-    .remache:nth-of-type(3){animation-delay:.65s} .remache:nth-of-type(4){animation-delay:.75s}
-    .chapa::before{animation:pintar .45s .7s ease-in-out backwards}
-    .marca img{animation:engranar .6s .9s cubic-bezier(.2,1.4,.4,1) backwards}
-    h1 b{animation:estampar .32s 1.1s ease-out backwards}
-    h1 span{animation:subir .35s 1.25s ease-out backwards}
-    .chapa .cond{animation:pintar .4s 1.35s ease-out backwards}
-    .bajo,.sellos{animation:subir .4s 1.5s ease-out backwards}
+    .remache:nth-of-type(1){animation-delay:.3s} .remache:nth-of-type(2){animation-delay:.38s}
+    .remache:nth-of-type(3){animation-delay:.46s} .remache:nth-of-type(4){animation-delay:.54s}
+    .chapa::before{animation:pintar .4s .5s ease-in-out backwards}
+    .marca img{animation:engranar .55s .6s cubic-bezier(.2,1.4,.4,1) backwards}
+    h1 b{animation:estampar .3s .75s ease-out backwards}
+    h1 span{animation:subir .3s .9s ease-out backwards}
+    .chapa .cond{animation:pintar .35s 1s ease-out backwards}
+    .bajo,.sellos{animation:subir .35s 1.1s ease-out backwards}
   }
   @keyframes colgar{from{opacity:0;transform:translateY(-70px) rotate(-3deg)}60%{opacity:1;transform:translateY(5px) rotate(.8deg)}to{transform:none}}
   @keyframes atornillar{from{opacity:0;transform:scale(2.4) rotate(-320deg)}70%{opacity:1;transform:scale(.85)}to{transform:none}}
@@ -255,6 +263,7 @@
   summary::after{content:"+";position:absolute;right:6px;top:10px;font-size:2rem;color:var(--esmalte)}
   details[open] summary::after{content:"–"}
   details p{margin:0 0 18px;max-width:70ch}
+  details a{color:var(--esmalte);font-weight:600}
 
   .barrios h3{font-size:1.7rem;margin:28px 0 12px;color:var(--taxi)}
   .barrios ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
@@ -286,14 +295,17 @@
 {
   "@context": "https://schema.org",
   "@type": ["Electrician", "Plumber"],
+  "@id": "https://mvjreparaciones.vercel.app/#negocio",
+  "url": "https://mvjreparaciones.vercel.app/",
   "name": "MJV Reparaciones Integrales",
+  "logo": "https://mvjreparaciones.vercel.app/apple-touch-icon.png",
   "description": "Electricidad, plomería y arreglos del hogar a domicilio en todos los barrios de Capital Federal y en zona norte. La visita se descuenta del trabajo, 15% de descuento programando con 10 días, presupuesto por escrito antes de empezar y 30 días de garantía.",
-  "image": "logo.png",
+  "image": ["https://mvjreparaciones.vercel.app/og.jpg", "https://mvjreparaciones.vercel.app/equipo-mjv-electricista-plomero.jpg"],
   "telephone": "+5491154959942",
   "priceRange": "$$",
   "currenciesAccepted": "ARS",
   "paymentAccepted": "Efectivo, transferencia, Mercado Pago, billeteras virtuales",
-  "openingHours": "Mo-Fr 07:00-18:00",
+  "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "07:00", "closes": "18:00"}],
   "address": {"@type": "PostalAddress", "addressLocality": "Ciudad Autónoma de Buenos Aires", "addressRegion": "CABA", "addressCountry": "AR"},
   "areaServed": [
     "Ciudad Autónoma de Buenos Aires", "Capital Federal", "Zona Norte del Gran Buenos Aires",
@@ -325,6 +337,11 @@
   "mainEntity": [
     {"@type": "Question", "name": "¿En qué barrios trabajan?", "acceptedAnswer": {"@type": "Answer", "text": "En todos los barrios de Capital Federal: Agronomía, Almagro, Balvanera, Barracas, Belgrano, Boedo, Caballito, Chacarita, Coghlan, Colegiales, Constitución, Flores, Floresta, La Boca, La Paternal, Liniers, Mataderos, Monte Castro, Monserrat, Nueva Pompeya, Núñez, Palermo, Parque Avellaneda, Parque Chacabuco, Parque Chas, Parque Patricios, Puerto Madero, Recoleta, Retiro, Saavedra, San Cristóbal, San Nicolás, San Telmo, Vélez Sarsfield, Versalles, Villa Crespo, Villa del Parque, Villa Devoto, Villa General Mitre, Villa Lugano, Villa Luro, Villa Ortúzar, Villa Pueyrredón, Villa Real, Villa Riachuelo, Villa Santa Rita, Villa Soldati y Villa Urquiza. Y en zona norte: Vicente López, Olivos, Florida, Florida Oeste, La Lucila, Munro, Villa Martelli, Carapachay, Villa Adelina, Martínez, Acassuso, San Isidro, Béccar y Boulogne. En departamentos y casas, para dueños e inquilinos."}},
     {"@type": "Question", "name": "¿Cuánto sale la visita?", "acceptedAnswer": {"@type": "Answer", "text": "La visita cuesta $80.000 e incluye un arreglo simple de electricidad o de plomería. Si el trabajo es más grande, te pasamos el presupuesto por escrito y esos $80.000 se descuentan del total cuando lo hacemos."}},
+    {"@type": "Question", "name": "¿Cuánto cobra un electricista por boca?", "acceptedAnswer": {"@type": "Answer", "text": "El cableado por boca sale entre $50.000 y $70.000, según el estado de la instalación. Es mano de obra, sin materiales."}},
+    {"@type": "Question", "name": "¿Cuánto sale instalar un ventilador de techo?", "acceptedAnswer": {"@type": "Answer", "text": "Desde $180.000 de mano de obra. Si ya hay una boca en el techo preparada, es lo más simple; si hay que cablear, se suma por boca."}},
+    {"@type": "Question", "name": "¿Cuánto sale cambiar una grifería monocomando?", "acceptedAnswer": {"@type": "Answer", "text": "Cambiar una grifería monocomando de cocina o baño sale desde $140.000. Reparar una grifería, cambiar los cueros o un flexible entra en la visita de $80.000."}},
+    {"@type": "Question", "name": "¿Por qué salta la térmica si no hay nada enchufado?", "acceptedAnswer": {"@type": "Answer", "text": "Suele ser un cable dañado, humedad en una caja o un artefacto fijo con falla, como un termotanque o una luminaria. No conviene subirla una y otra vez: escribinos y buscamos el problema."}},
+    {"@type": "Question", "name": "¿Por qué pierde agua la mochila del inodoro?", "acceptedAnswer": {"@type": "Answer", "text": "Casi siempre es el flotante desregulado o la goma de la descarga gastada. Regular la mochila entra en la visita de $80.000; si hay que repararla, sale desde $200.000."}},
     {"@type": "Question", "name": "¿Los trabajos tienen garantía?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. La mano de obra tiene 30 días de garantía."}},
     {"@type": "Question", "name": "¿Quiénes van a mi casa?", "acceptedAnswer": {"@type": "Answer", "text": "Vamos nosotros, el equipo de MJV. Trabajamos con agenda: si acordamos un horario, llegamos a ese horario."}},
     {"@type": "Question", "name": "¿Tienen algún descuento?", "acceptedAnswer": {"@type": "Answer", "text": "Sí: 15% de descuento si programás el trabajo con 10 días o más de anticipación."}},
@@ -342,11 +359,11 @@
   <div class="ancho">
     <div class="chapa">
       <i class="remache" aria-hidden="true"></i><i class="remache" aria-hidden="true"></i><i class="remache" aria-hidden="true"></i><i class="remache" aria-hidden="true"></i>
-      <div class="marca"><img src="insignia-blanca.png" alt="" width="600" height="667"><h1><b>MJV</b> <span>Reparaciones Integrales</span></h1></div>
+      <div class="marca"><img src="insignia-blanca.webp" alt="" width="600" height="667" fetchpriority="high"><h1><b>MJV</b> <span>Reparaciones Integrales</span></h1></div>
       <p class="cond"><span>Electricidad y plomería</span><span>Capital Federal y zona norte</span></p>
     </div>
     <div class="bajo">
-    <p class="bajada">Electricidad, plomería y arreglos generales del hogar. Vamos nosotros, una sola vez, con el presupuesto por escrito antes de empezar.</p>
+    <p class="bajada">Electricista y plomero a domicilio en Capital Federal y zona norte. Vamos nosotros, una sola vez, con el presupuesto por escrito antes de empezar.</p>
     <a class="wa" href="contacto.html">¡Contactanos!</a>
     </div>
     <ul class="sellos">
@@ -373,8 +390,8 @@
 <section class="ancho" id="servicios">
   <h2>Qué arreglamos</h2>
   <div class="cols">
-    <div><h3>Electricidad</h3><p>Tableros, térmicas, cortocircuitos, tomas, llaves de luz, luminarias y ventiladores de techo.</p></div>
-    <div><h3>Plomería</h3><p>Pérdidas, canillas y griferías, inodoros, termotanques eléctricos y bombas presurizadoras.</p></div>
+    <div><h3>Electricidad</h3><p>Tableros, térmicas que saltan, cortocircuitos, cableado por boca, tomacorrientes y teclas de luz, artefactos de iluminación y ventiladores de techo.</p></div>
+    <div><h3>Plomería</h3><p>Canillas que gotean, griferías monocomando, cueros y flexibles, pérdidas de agua, mochilas de inodoro, sifones, termotanques eléctricos y bombas presurizadoras.</p></div>
     <div><h3>Colgar y colocar</h3><p>Televisores y estantes.</p></div>
     <div><h3>Armado e instalación</h3><p>Muebles y lavarropas.</p></div>
     <div><h3>Techos y humedad</h3><p>Membranas, filtraciones y humedad.</p></div>
@@ -423,7 +440,7 @@
 <section class="ancho">
   <h2>Quiénes vamos a tu casa</h2>
   <div class="equipo">
-    <img src="equipo.jpg" alt="El equipo de MJV Reparaciones Integrales junto a la camioneta" width="900" height="507" loading="lazy">
+    <img src="equipo-mjv-electricista-plomero.jpg" alt="El equipo de electricistas y plomeros de MJV Reparaciones Integrales junto a la camioneta" width="900" height="507" loading="lazy">
     <p>Vamos nosotros, el equipo de MJV. Trabajamos con agenda: si acordamos un horario, llegamos a ese horario. Toda la mano de obra tiene 30 días de garantía.</p>
     <!-- RESEÑAS: cambiar el href por el link del perfil de Google Business (Perfil > Compartir) cuando Google lo valide. -->
     <a class="resenas" href="https://www.google.com/search?q=MJV+Reparaciones+Integrales+rese%C3%B1as" target="_blank" rel="noopener">Mirá nuestras reseñas en Google ↗</a>
@@ -440,6 +457,26 @@
     <details>
       <summary>¿Cuánto sale la visita?</summary>
       <p>La visita cuesta $80.000 e incluye un arreglo simple de electricidad o de plomería. Si el trabajo es más grande, te pasamos el presupuesto por escrito y esos $80.000 se descuentan del total cuando lo hacemos.</p>
+    </details>
+    <details>
+      <summary>¿Cuánto cobra un electricista por boca?</summary>
+      <p>El cableado por boca sale entre $50.000 y $70.000, según el estado de la instalación. Es mano de obra, sin materiales.</p>
+    </details>
+    <details>
+      <summary>¿Cuánto sale instalar un ventilador de techo?</summary>
+      <p>Desde $180.000 de mano de obra. Si ya hay una boca en el techo preparada, es lo más simple; si hay que cablear, se suma por boca.</p>
+    </details>
+    <details>
+      <summary>¿Cuánto sale cambiar una grifería monocomando?</summary>
+      <p>Cambiar una grifería monocomando de cocina o baño sale desde $140.000. Reparar una grifería, cambiar los cueros o un flexible entra en la visita de $80.000.</p>
+    </details>
+    <details>
+      <summary>¿Por qué salta la térmica si no hay nada enchufado?</summary>
+      <p>Suele ser un cable dañado, humedad en una caja o un artefacto fijo con falla, como un termotanque o una luminaria. No conviene subirla una y otra vez: escribinos y buscamos el problema.</p>
+    </details>
+    <details>
+      <summary>¿Por qué pierde agua la mochila del inodoro?</summary>
+      <p>Casi siempre es el flotante desregulado o la goma de la descarga gastada. Regular la mochila entra en la visita de $80.000; si hay que repararla, sale desde $200.000.</p>
     </details>
     <details>
       <summary>¿Tienen algún descuento?</summary>
@@ -480,7 +517,7 @@
 
 <section class="franja">
   <div class="ancho cierre">
-    <p class="marquita"><img src="insignia.png" alt="" width="110" height="120" loading="lazy">MJV</p>
+    <p class="marquita"><img src="insignia.webp" alt="" width="110" height="120" loading="lazy">MJV</p>
     <div>
       <h2>Lunes a viernes de 7 a 18, y urgencias</h2>
       <p>Las urgencias las atendemos también de noche, fines de semana y feriados, sujetas a disponibilidad.</p>
