@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Electricista y plomero a domicilio en Capital Federal y zona norte | MJV Reparaciones Integrales</title>
-<meta name="description" content="Electricista y plomero a domicilio en Saavedra, Núñez, Belgrano, Villa Urquiza, Vicente López, Olivos y todos los barrios de Capital Federal. Visita que se descuenta del trabajo, presupuesto por escrito y 30 días de garantía.">
+<meta name="description" content="Electricista y plomero a domicilio para casas, departamentos, consorcios y Airbnb en Saavedra, Núñez, Belgrano, Villa Urquiza, Vicente López, Olivos y toda Capital Federal. Presupuesto por escrito y 30 días de garantía.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="es_AR">
 <meta property="og:title" content="Electricista y plomero a domicilio | MJV Reparaciones Integrales">
-<meta property="og:description" content="A domicilio en Capital Federal y zona norte. La visita se descuenta del trabajo, presupuesto por escrito y 30 días de garantía.">
+<meta property="og:description" content="A domicilio en Capital Federal y zona norte, para casas, consorcios y Airbnb. La visita se descuenta del trabajo, presupuesto por escrito y 30 días de garantía.">
 <meta name="theme-color" content="#0B3D91">
 <link rel="icon" href="favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -81,7 +81,7 @@
   h1 span{display:block}
   h1 b{display:block;font-size:clamp(4.4rem,min(17vw,27vh),18rem);line-height:.88;letter-spacing:.03em}
   .chapa .cond{font-size:clamp(1.2rem,min(3.2vw,4.6vh),3rem);font-weight:700;margin:14px 0 0;display:flex;justify-content:center;gap:4px clamp(24px,5vw,72px);flex-wrap:wrap;
-    border-top:4px solid #f6f8fb;padding-top:12px;text-transform:uppercase;letter-spacing:.05em}
+    border-top:4px solid var(--taxi);padding-top:12px;text-transform:uppercase;letter-spacing:.05em}
   @media (max-width:700px){ /* celular: menos marco, letras más grandes, sin aire de sobra */
     .chapa{--b:14px;padding:calc(var(--b) + 18px) calc(var(--b) + 12px);border-radius:14px}
     .marca{flex-direction:column;gap:6px}
@@ -155,6 +155,7 @@
   .franja li::before{content:counter(p) ".";grid-column:1;padding-right:12px;font-family:"Barlow Condensed",sans-serif;font-weight:700;font-size:3.2rem;line-height:.9}
   .franja li > span:not(.ic){grid-column:2;font-size:1.1rem}
 
+  .donde{font-size:1.2rem;margin:-8px 0 8px}
   .cols{display:grid;gap:8px 48px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
   .cols h3{font-size:1.7rem;margin:18px 0 4px;color:var(--taxi)}
   .cols p{margin:0}
@@ -299,10 +300,11 @@
   "url": "https://mjvreparaciones.vercel.app/",
   "name": "MJV Reparaciones Integrales",
   "logo": "https://mjvreparaciones.vercel.app/apple-touch-icon.png",
-  "description": "Electricidad, plomería y arreglos del hogar a domicilio en todos los barrios de Capital Federal y en zona norte. La visita se descuenta del trabajo, 15% de descuento programando con 10 días, presupuesto por escrito antes de empezar y 30 días de garantía.",
+  "description": "Electricidad, plomería y arreglos del hogar a domicilio para casas, departamentos, consorcios y alquileres temporarios tipo Airbnb, en todos los barrios de Capital Federal y en zona norte. La visita se descuenta del trabajo, 15% de descuento programando con 10 días, presupuesto por escrito antes de empezar y 30 días de garantía.",
   "image": ["https://mjvreparaciones.vercel.app/og.jpg", "https://mjvreparaciones.vercel.app/equipo-mjv-electricista-plomero.jpg"],
   "telephone": "+5491154959942",
   "priceRange": "$$",
+  "knowsAbout": ["Electricidad domiciliaria", "Plomería", "Mantenimiento de consorcios", "Mantenimiento de alquileres temporarios y Airbnb", "Bombas presurizadoras"],
   "currenciesAccepted": "ARS",
   "paymentAccepted": "Efectivo, transferencia, Mercado Pago, billeteras virtuales",
   "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "07:00", "closes": "18:00"}],
@@ -335,7 +337,8 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    {"@type": "Question", "name": "¿En qué barrios trabajan?", "acceptedAnswer": {"@type": "Answer", "text": "En todos los barrios de Capital Federal: Agronomía, Almagro, Balvanera, Barracas, Belgrano, Boedo, Caballito, Chacarita, Coghlan, Colegiales, Constitución, Flores, Floresta, La Boca, La Paternal, Liniers, Mataderos, Monte Castro, Monserrat, Nueva Pompeya, Núñez, Palermo, Parque Avellaneda, Parque Chacabuco, Parque Chas, Parque Patricios, Puerto Madero, Recoleta, Retiro, Saavedra, San Cristóbal, San Nicolás, San Telmo, Vélez Sarsfield, Versalles, Villa Crespo, Villa del Parque, Villa Devoto, Villa General Mitre, Villa Lugano, Villa Luro, Villa Ortúzar, Villa Pueyrredón, Villa Real, Villa Riachuelo, Villa Santa Rita, Villa Soldati y Villa Urquiza. Y en zona norte: Vicente López, Olivos, Florida, Florida Oeste, La Lucila, Munro, Villa Martelli, Carapachay, Villa Adelina, Martínez, Acassuso, San Isidro, Béccar y Boulogne. En departamentos y casas, para dueños e inquilinos."}},
+    {"@type": "Question", "name": "¿En qué barrios trabajan?", "acceptedAnswer": {"@type": "Answer", "text": "En todos los barrios de Capital Federal: Agronomía, Almagro, Balvanera, Barracas, Belgrano, Boedo, Caballito, Chacarita, Coghlan, Colegiales, Constitución, Flores, Floresta, La Boca, La Paternal, Liniers, Mataderos, Monte Castro, Monserrat, Nueva Pompeya, Núñez, Palermo, Parque Avellaneda, Parque Chacabuco, Parque Chas, Parque Patricios, Puerto Madero, Recoleta, Retiro, Saavedra, San Cristóbal, San Nicolás, San Telmo, Vélez Sarsfield, Versalles, Villa Crespo, Villa del Parque, Villa Devoto, Villa General Mitre, Villa Lugano, Villa Luro, Villa Ortúzar, Villa Pueyrredón, Villa Real, Villa Riachuelo, Villa Santa Rita, Villa Soldati y Villa Urquiza. Y en zona norte: Vicente López, Olivos, Florida, Florida Oeste, La Lucila, Munro, Villa Martelli, Carapachay, Villa Adelina, Martínez, Acassuso, San Isidro, Béccar y Boulogne. En departamentos y casas, para dueños e inquilinos. Trabajamos en casas y departamentos, consorcios y alquileres temporarios tipo Airbnb."}},
+    {"@type": "Question", "name": "¿Trabajan para consorcios y Airbnb?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. Además de casas y departamentos, hacemos arreglos de electricidad y plomería para consorcios, administraciones y alquileres temporarios tipo Airbnb, en Capital Federal y zona norte."}},
     {"@type": "Question", "name": "¿Cuánto sale la visita?", "acceptedAnswer": {"@type": "Answer", "text": "La visita cuesta $80.000 e incluye un arreglo simple de electricidad o de plomería. Si el trabajo es más grande, te pasamos el presupuesto por escrito y esos $80.000 se descuentan del total cuando lo hacemos."}},
     {"@type": "Question", "name": "¿Cuánto cobra un electricista por boca?", "acceptedAnswer": {"@type": "Answer", "text": "El cableado por boca sale entre $50.000 y $70.000, según el estado de la instalación. Es mano de obra, sin materiales."}},
     {"@type": "Question", "name": "¿Cuánto sale instalar un ventilador de techo?", "acceptedAnswer": {"@type": "Answer", "text": "Desde $180.000 de mano de obra. Si ya hay una boca en el techo preparada, es lo más simple; si hay que cablear, se suma por boca."}},
@@ -359,7 +362,7 @@
   <div class="ancho">
     <div class="chapa">
       <i class="remache" aria-hidden="true"></i><i class="remache" aria-hidden="true"></i><i class="remache" aria-hidden="true"></i><i class="remache" aria-hidden="true"></i>
-      <div class="marca"><img src="insignia-blanca.webp" alt="" width="600" height="667" fetchpriority="high"><h1><b>MJV</b> <span>Reparaciones Integrales</span></h1></div>
+      <div class="marca"><img src="insignia-metal.webp" alt="" width="600" height="667" fetchpriority="high"><h1><b>MJV</b> <span>Reparaciones Integrales</span></h1></div>
       <p class="cond"><span>Electricidad y plomería</span><span>Capital Federal y zona norte</span></p>
     </div>
     <div class="bajo">
@@ -389,9 +392,10 @@
 
 <section class="ancho" id="servicios">
   <h2>Qué arreglamos</h2>
+  <p class="donde">En casas y departamentos, consorcios y alquileres temporarios tipo Airbnb.</p>
   <div class="cols">
-    <div><h3>Electricidad</h3><p>Tableros, térmicas que saltan, cortocircuitos, cableado por boca, tomacorrientes y teclas de luz, artefactos de iluminación y ventiladores de techo.</p></div>
-    <div><h3>Plomería</h3><p>Canillas que gotean, griferías monocomando, cueros y flexibles, pérdidas de agua, mochilas de inodoro, sifones, termotanques eléctricos y bombas presurizadoras.</p></div>
+    <div><h3>Electricidad</h3><p>Tableros, llaves termomagnéticas que se disparan, disyuntores diferenciales, cortocircuitos, cableado por boca, tomacorrientes y teclas de luz, artefactos de iluminación y ventiladores de techo.</p></div>
+    <div><h3>Plomería</h3><p>Canillas que gotean, griferías monocomando, cueros y flexibles, filtraciones, fugas y pérdidas de agua, mochilas de inodoro, sifones, termotanques eléctricos y bombas presurizadoras.</p></div>
     <div><h3>Colgar y colocar</h3><p>Televisores y estantes.</p></div>
     <div><h3>Armado e instalación</h3><p>Muebles y lavarropas.</p></div>
     <div><h3>Techos y humedad</h3><p>Membranas, filtraciones y humedad.</p></div>
@@ -404,7 +408,7 @@
     <p class="promo"><span class="ic a-paso" aria-hidden="true"><svg><use href="#m-calendar-clock"/></svg></span><span><b>15% de descuento</b> si programás el trabajo con 10 días o más de anticipación.</span></p>
     <h3 class="grupo">Visita con arreglo incluido</h3>
     <ul class="precios visitas">
-      <li><span class="ic a-pulso" aria-hidden="true"><svg><use href="#m-power-socket-au"/></svg></span><h4>Visita de electricidad</h4><span class="inc">Incluye cambiar un tomacorriente, una tecla o un artefacto de iluminación.</span><p><small>Precio</small>$80.000</p></li>
+      <li><span class="ic a-pulso" aria-hidden="true"><svg><use href="#m-power-socket-au"/></svg></span><h4>Visita de electricidad</h4><span class="inc">Incluye cambiar un tomacorriente, una tecla o un artefacto de iluminación básico.</span><p><small>Precio</small>$80.000</p></li>
       <li><span class="ic a-canilla" aria-hidden="true"><svg><use href="#m-faucet"/></svg><svg class="gota"><use href="#m-water"/></svg></span><h4>Visita de plomería</h4><span class="inc">Incluye reparar una grifería, cambiar los cueros o un flexible, regular un depósito de pared o una mochila, o limpiar el sifón de la cocina.</span><p><small>Precio</small>$80.000</p></li>
     </ul>
     <p class="nota">Si el arreglo es más grande y hace falta un relevamiento y un presupuesto, la visita cuesta lo mismo y se descuenta del total cuando hacemos el trabajo.</p>
@@ -452,7 +456,11 @@
     <h2>Preguntas frecuentes</h2>
     <details>
       <summary>¿En qué barrios trabajan?</summary>
-      <p>En todos los barrios de Capital Federal y en zona norte, en departamentos y casas, para dueños e inquilinos. La <a href="#barrios">lista completa de barrios</a> está más abajo.</p>
+      <p>En todos los barrios de Capital Federal y en zona norte. Trabajamos en casas y departamentos, consorcios y alquileres temporarios tipo Airbnb, para dueños, inquilinos y administradores. La <a href="#barrios">lista completa de barrios</a> está más abajo.</p>
+    </details>
+    <details>
+      <summary>¿Trabajan para consorcios y Airbnb?</summary>
+      <p>Sí. Además de casas y departamentos, hacemos arreglos de electricidad y plomería para consorcios, administraciones y alquileres temporarios tipo Airbnb, en Capital Federal y zona norte.</p>
     </details>
     <details>
       <summary>¿Cuánto sale la visita?</summary>
@@ -517,7 +525,7 @@
 
 <section class="franja">
   <div class="ancho cierre">
-    <p class="marquita"><img src="insignia.webp" alt="" width="110" height="120" loading="lazy">MJV</p>
+    <p class="marquita"><img src="insignia-metal.webp" alt="" width="110" height="122" loading="lazy">MJV</p>
     <div>
       <h2>Lunes a viernes de 7 a 18, y urgencias</h2>
       <p>Las urgencias las atendemos también de noche, fines de semana y feriados, sujetas a disponibilidad.</p>
