@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://mvjreparaciones.vercel.app/sitemap.xml
+Sitemap: https://mjvreparaciones.vercel.app/sitemap.xml
